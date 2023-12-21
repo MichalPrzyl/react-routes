@@ -1,5 +1,5 @@
-import 'react-data-grid/lib/styles.css';
-import DataGrid from 'react-data-grid';
+import { DataGrid } from '@mui/x-data-grid';
+import clsx from 'clsx';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -9,16 +9,25 @@ const Blogs = () => {
     catQuote: ""
   });
   const columns = [
-    { key: 'id', name: 'ID', width: "400px" },
-    { key: 'title', name: 'Title' }
+    { field: 'id', headerName: 'ID' },
+    {
+      field: 'title',
+      headerName: 'Title',
+      cellClassName: (params) => {
+        // console.log(params.row.title[0])
+        if (params.row.title[0] === "H") {
+          return 'negative'
+        }
+      },
+    }
   ];
 
   const rows = [
     { id: 0, title: 'Example' },
     { id: 1, title: 'Demo' },
-    { id: 2, title: 'Demo2' },
+    { id: 2, title: 'Hemo2' },
     { id: 3, title: 'Demo3' },
-    { id: 4, title: 'Demo4' },
+    { id: 4, title: 'Hemo4' },
   ];
 
   const changeSelectedRow = (e) => {
@@ -46,10 +55,19 @@ const Blogs = () => {
       <DataGrid
         columns={columns}
         rows={rows}
-        rowHeight={20}
+        rowHeight={50}
         selectedRows={state.selectedRecordId}
         onCellClick={changeSelectedRow}
-      // style={{ border: '10px solid green'}}
+        // style={{ border: '10px solid green'}}
+        sx={{
+          boxShadow: 2,
+          border: 10,
+          borderColor: 'primary.light',
+          '& .MuiDataGrid-cell:focus': {
+            color: 'green',
+          },
+        }}
+        getRowClassName={(params) => `super-app-theme--${params.row.title[0]}`}
 
       />
     </div>
