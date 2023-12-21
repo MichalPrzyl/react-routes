@@ -1,0 +1,31 @@
+$primary-color: #333;
+
+.app-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.menu-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    row-gap: 20px;
+    border: 1px solid black;
+    margin-left: 20px;;
+    margin-top: 20px;
+}
+
+.menu-element{
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 25px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.menu-element:hover{
+    background: red;
+}
+.outlet{
+    margin-left: 150px;
+}
