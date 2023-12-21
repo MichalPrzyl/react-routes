@@ -4,18 +4,19 @@ import '../styles/main.scss'
 
 const Layout = () => {
   return (
-    <>
-      <div className="app-wrapper">
+      <div className="app2-wrapper">
+
         <div className="menu-wrapper">
           <Link className='menu-element' to="/">Home</Link>
           <Link className='menu-element' to="/blogs">Blogs</Link>
           <Link className='menu-element' to="/contact">Contact</Link>
+
         </div>
+
         <div className="outlet">
-          <Outlet />
+          <Outlet className='outlet' />
         </div>
       </div>
-    </>
   )
 };
 
