@@ -8,7 +8,7 @@ const Layout = () => {
 
         <div className="menu-wrapper">
           <Link className='menu-element' to="/">Home</Link>
-          <Link className='menu-element' to="/blogs">Blogs</Link>
+          <Link className='menu-element' to="/blogs">DataGrid</Link>
           <Link className='menu-element' to="/contact">Contact</Link>
 
         </div>
